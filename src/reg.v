@@ -11,6 +11,13 @@ module regfile(
 
 reg [31:0] regs [0:31];
 
+// ADD THIS
+integer i;
+initial begin
+    for (i = 0; i < 32; i = i + 1)
+        regs[i] = 32'b0;
+end
+
 assign rd1 = (rs1 == 0) ? 0 : regs[rs1];
 assign rd2 = (rs2 == 0) ? 0 : regs[rs2];
 
